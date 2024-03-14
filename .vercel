@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/next" } // 对于Next.js应用
+  ],
+  "routes": [ // 若有自定义路由需求
+    { "src": "/api/(.*)", "dest": "api/$1" } // 用于处理API路由
+  ],
+  "env": { // 环境变量配置
+    "SECRET_KEY": { "value": "your-secret-key" }
+  }
+}
